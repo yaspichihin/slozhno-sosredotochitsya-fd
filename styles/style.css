@@ -1,5 +1,241 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+:root {
+  box-sizing: border-box;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+a {
+  text-decoration: none;
+}
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  max-width: 375px;
+  margin: 0 auto;
+  padding: 0;
+  font-family: "IBM Plex Mono", monospace;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 18px;
+  background-color: #000028;
+}
+
+.header {
+  position: relative;
+
+  display: grid;
+  grid-template-columns: 1fr;
+
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+
+  background-image: url(../images/cover-image-dark.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before,
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  pointer-events: none;
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-top: 1px solid #ff0070;
+  border-right: 1px solid #ff0070;
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-bottom: 1px solid #ff0070;
+  border-left: 1px solid #ff0070;
+}
+
+.header__rec-indicator {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  line-height: 25px;
+}
+
+.header__rec-indicator::before {
+  content: "REC";
+  color: #ff2470;
+}
+
+.header__rec-indicator::after {
+  content: "";
+  display: inline-block;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: #ff0070;
+  margin-left: 10px;
+  box-shadow: 0 0 4px 2px #ff0070;
+  margin-bottom: 2px;
+}
+
+.header__theme-menu {
+  margin-block-start: 75px;
+  margin-inline: auto 15px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 11.5px;
+}
+
+.header__theme-menu-button {
+  text-transform: lowercase;
+}
+
+.header__hero {
+  text-align: left;
+  font-weight: 700;
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  line-height: 79%;
+  color: #db00ff;
+
+  text-shadow: 4px 4px 0 #ff0070;
+  margin-block-start: 71px;
+  letter-spacing: -2px;
+}
+
+.header__title {
+  margin-block-start: 55px;
+  margin-block-end: 66px;
+}
+
+.header__title-text {
+  font-weight: 700;
+  line-height: 23.4px;
+}
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 50px;
+
+  padding-block-start: 40px;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+}
+
+.main a {
+  text-shadow: 2px 1px 0 #ff0070;
+}
+
+.section__title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  color: #ff0070;
+  letter-spacing: 0%;
+}
+
+.section__card {
+  margin-block-start: 20px;
+}
+
+.section__card-title {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+.section__card-text {
+  margin-block-start: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  color: #f1b2ce;
+}
+
+.section__subcard {
+  margin-block-start: 20px;
+}
+
+.section__subcard-title {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+.section__subcard-text {
+  margin-block-start: 10px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  color: #f1b2ce;
+}
+
+.concentration-pictures__gallery {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+  margin-block-start: 10px;
+}
+
+.concentration-pictures__sunset {
+  width: 355px;
+  height: 142px;
+}
+
+.concentration-pictures__ice-cream {
+  width: 355px;
+  height: 355px;
+}
+
+.concentration-pictures__tape {
+  width: 355px;
+  height: 237px;
+}
+
+.concentration-pictures__books {
+  width: 355px;
+  height: 355px;
+}
+
+.concentration-pictures__street {
+  width: 355px;
+  height: 237px;
+}
+
+.title-decor {
+  color: #000028;
+  background-color: #ff0070;
+}
+
+.footer {
+  margin-block-start: 40px;
+}
+
+.footer__hero {
+  padding-block-start: 287px;
+  padding-block-end: 286px;
+  padding-inline-start: 14px;
+  padding-inline-end: 13px;
+  font-weight: 700;
+  font-size: 116px;
+  line-height: 83%;
+  color: #db00ff;
+  text-shadow: 2px 2px 0 #ff0070;
+  letter-spacing: 0%;
 }
