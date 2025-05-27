@@ -8,13 +8,13 @@ html {
 }
 
 a {
-  text-shadow: 2px 1px 0 var(--accent-color);
   text-decoration: none;
+  text-shadow: 2px 1px 0 var(--accent-color);
 }
 
 a:hover {
-  text-shadow: 2px 1px 0 var(--accent-color);
   text-decoration: underline;
+  text-shadow: 2px 1px 0 var(--accent-color);
 }
 
 a:focus {
@@ -34,7 +34,6 @@ a:focus-visible {
   display: grid;
   grid-template-columns: 1fr;
   padding-inline: 10px;
-
   background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
@@ -69,10 +68,10 @@ a:focus-visible {
 }
 
 .header__rec {
-  display: var(--rec-display);
   position: absolute;
   top: 10px;
   right: 19px;
+  display: var(--rec-display);
   line-height: 25px;
 }
 
@@ -101,8 +100,8 @@ a:focus-visible {
 .header__theme-menu-list {
   display: flex;
   flex-direction: row;
-  gap: 10px;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .header__theme-menu-item {
@@ -113,8 +112,8 @@ a:focus-visible {
 .header__theme-menu-button {
   margin-inline: 13px;
   margin-block: 1.5px;
-  padding: 0;
   border: 0;
+  padding: 0;
   color: var(--menu-text-color);
   line-height: 18px;
   text-transform: lowercase;
@@ -189,8 +188,8 @@ a:focus-visible {
 
 .section__card-subtitle {
   margin-block-start: 20px;
-  font-size: inherit;
   font-weight: 400;
+  font-size: inherit;
 }
 
 .section__card-text {
@@ -199,23 +198,23 @@ a:focus-visible {
 }
 
 .pictures__gallery {
-  margin-block-start: 10px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
   grid-template-areas:
     "sunset"
     "ice-cream"
     "tape"
     "books"
     "street";
+  gap: 10px;
+  margin-block-start: 10px;
 }
 
 .pictures__img {
+  display: block;
+  object-fit: cover;
   inline-size: 100%;
   block-size: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 .pictures__img-sunset {
@@ -282,13 +281,13 @@ a:focus-visible {
   }
 
   .header__theme-menu {
-    margin-block-start: 192px;
     margin-inline-start: 678px;
+    margin-block-start: 192px;
   }
 
   .header__hero {
-    font-size: 120px;
     margin-block-start: 174.5px;
+    font-size: 120px;
   }
 
   .header__title {
@@ -297,9 +296,9 @@ a:focus-visible {
   }
 
   .main {
+    gap: 80px;
     margin-block-start: 60px;
     padding-inline: 20px;
-    gap: 80px;
   }
 
   .section__cards {
@@ -314,20 +313,19 @@ a:focus-visible {
   }
 
   .lowering .section__title {
-    max-inline-size: 236px;
     margin-block-end: 20px;
+    max-inline-size: 236px;
   }
 
   .tips {
-    margin-block-start: -2px;
     display: grid;
     grid-template-columns: 1fr 2fr;
-    column-gap: 20px;
     row-gap: 20px;
+    column-gap: 20px;
+    margin-block-start: -2px;
   }
 
   .pictures__gallery {
-    margin-block-start: 20px;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 192px 230px 318px;
     grid-template-areas:
@@ -335,6 +333,7 @@ a:focus-visible {
       "tape books ice-cream"
       "tape street street";
     gap: 20px;
+    margin-block-start: 20px;
   }
 
   .footer {
@@ -354,8 +353,8 @@ a:focus-visible {
   }
 
   .header__theme-menu {
-    margin-block-start: 20px;
     margin-inline: auto;
+    margin-block-start: 20px;
   }
 
   .header__theme-menu-list {
@@ -386,14 +385,14 @@ a:focus-visible {
   }
 
   .lowering .section__title {
-    max-inline-size: 315px;
     margin-block-end: 0;
+    max-inline-size: 315px;
   }
 
   .lowering .section__card {
-    max-inline-size: 315px;
     grid-column: span 1;
     grid-row: 2 / span 1;
+    max-inline-size: 315px;
   }
 
   .tips {
