@@ -1,18 +1,28 @@
-:root {
-  --color-primary: #ff0070;
-}
-
 html {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
-  background-color: #000028;
+  background-color: var(--background-color);
   block-size: 100%;
 }
 
 a {
-  text-shadow: 2px 1px 0 #ff0070;
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-shadow: 2px 1px 0 var(--accent-color);
+  text-decoration: underline;
+}
+
+a:focus {
+  outline: none;
+}
+
+a:focus-visible {
+  outline: 1px solid var(--main-text-color);
 }
 
 .page {
@@ -25,7 +35,7 @@ a {
   grid-template-columns: 1fr;
   padding-inline: 10px;
 
-  background-image: url(../images/cover-image-dark.png);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -47,18 +57,19 @@ a {
 .decorated::before {
   top: 10px;
   right: 10px;
-  border-top: 1px solid #ff0070;
-  border-right: 1px solid #ff0070;
+  border-top: 1px solid var(--decorated-frame-color);
+  border-right: 1px solid var(--decorated-frame-color);
 }
 
 .decorated::after {
   bottom: 10px;
   left: 10px;
-  border-bottom: 1px solid #ff0070;
-  border-left: 1px solid #ff0070;
+  border-bottom: 1px solid var(--decorated-frame-color);
+  border-left: 1px solid var(--decorated-frame-color);
 }
 
 .header__rec {
+  display: var(--rec-display);
   position: absolute;
   top: 10px;
   right: 19px;
@@ -76,8 +87,8 @@ a {
   margin-inline-start: 10px;
   margin-block-end: 2px;
   border-radius: 50%;
-  box-shadow: 0 0 4px 2px #ff0070;
-  background-color: #ff0070;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  background-color: var(--accent-color);
   inline-size: 9px;
   block-size: 9px;
 }
@@ -104,24 +115,42 @@ a {
   margin-block: 1.5px;
   padding: 0;
   border: 0;
-  color: #ff0070;
+  color: var(--menu-text-color);
   line-height: 18px;
   text-transform: lowercase;
   background-color: transparent;
+  cursor: pointer;
 }
 
-.header__theme-menu-item:has(.header__theme-menu-button_type_dark) {
-  border: 1px solid #ff0070;
+.header__theme-menu-item:has(.header__theme-menu-button_active) {
+  border: 1px solid var(--menu-text-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-item:hover {
+  border: 1px solid var(--menu-text-color-hover);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-item:focus-within {
+  border-bottom: 1px solid var(--menu-text-color);
+}
+
+.header__theme-menu-item:active {
+  border: 1px solid var(--menu-text-color-hover);
 }
 
 .header__hero {
   margin-block-start: 65px;
-  color: #db00ff;
+  color: var(--hero-text-color);
   font-weight: 700;
   font-size: 116px;
   line-height: 83%;
   text-align: left;
-  text-shadow: 4px 4px 0px #ff0070;
+  text-shadow: 4px 4px 0px var(--hero-shadow-color);
 }
 
 .header__title {
@@ -141,7 +170,7 @@ a {
 }
 
 .section__title {
-  color: #ff0070;
+  color: var(--title-text-color);
   font-weight: 700;
   font-size: inherit;
 }
@@ -161,11 +190,12 @@ a {
 .section__card-subtitle {
   margin-block-start: 20px;
   font-size: inherit;
+  font-weight: 400;
 }
 
 .section__card-text {
   margin-block-start: 10px;
-  color: #f1b2ce;
+  color: var(--main-text-color);
 }
 
 .pictures__gallery {
@@ -211,21 +241,21 @@ a {
 }
 
 .footer__hero {
-  color: #db00ff;
+  color: var(--hero-text-color);
   font-weight: 700;
   font-size: 116px;
   line-height: 83%;
-  text-shadow: 2px 2px 0 #ff0070;
+  text-shadow: 2px 2px 0 var(--hero-shadow-color);
 }
 
 .highlighted {
-  color: #000028;
-  background-color: #ff0070;
+  color: var(--highlighted-text-color);
+  background-color: var(--highlighted-background-color);
 }
 
-@media (min-width: 768px) {
+@media (width >= 768px) {
   .page {
-    max-width: 768px;
+    max-inline-size: 768px;
   }
 
   .header {
@@ -318,9 +348,9 @@ a {
   }
 }
 
-@media (min-width: 1024px) {
+@media (width >= 1024px) {
   .page {
-    max-width: 1024px;
+    max-inline-size: 1024px;
   }
 
   .header__theme-menu {
@@ -370,7 +400,6 @@ a {
     grid-template-columns: 1fr minmax(min-content, 649px);
   }
 
-
   .pictures__gallery {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 260px 315px 433px;
@@ -389,5 +418,6 @@ a {
 
   .footer__hero {
     font-size: 157px;
-  } 
+    text-shadow: 2px 2px 0 var(--hero-shadow-footer-color);
+  }
 }
