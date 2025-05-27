@@ -27,6 +27,7 @@ a:focus-visible {
 
 .page {
   max-inline-size: 375px;
+  background-attachment: fixed;
 }
 
 .header {
