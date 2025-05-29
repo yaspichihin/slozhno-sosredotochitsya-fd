@@ -3,7 +3,6 @@ html {
   font-weight: 400;
   font-size: 18px;
   line-height: 23.4px;
-  background-color: var(--background-color);
   block-size: 100%;
 }
 
@@ -13,8 +12,7 @@ a {
 }
 
 a:hover {
-  text-decoration: underline;
-  text-shadow: 2px 1px 0 var(--accent-color);
+  border-bottom: 1px solid var(--main-text-color);
 }
 
 a:focus {
@@ -22,11 +20,15 @@ a:focus {
 }
 
 a:focus-visible {
-  outline: 1px solid var(--main-text-color);
+  border: 1px solid var(--main-text-color);
 }
 
 .page {
-  max-inline-size: 375px;
+  min-inline-size: 375px;
+  padding-inline: 10px;
+  background-image: var(--background-image);
+  background-position: center;
+  background-size: cover;
   background-attachment: fixed;
 }
 
@@ -34,11 +36,6 @@ a:focus-visible {
   position: relative;
   display: grid;
   grid-template-columns: 1fr;
-  padding-inline: 10px;
-  background-image: var(--background-image);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
 }
 
 .decorated {
@@ -56,14 +53,14 @@ a:focus-visible {
 
 .decorated::before {
   top: 10px;
-  right: 10px;
+  right: 0;
   border-top: 1px solid var(--decorated-frame-color);
   border-right: 1px solid var(--decorated-frame-color);
 }
 
 .decorated::after {
   bottom: 10px;
-  left: 10px;
+  left: 0;
   border-bottom: 1px solid var(--decorated-frame-color);
   border-left: 1px solid var(--decorated-frame-color);
 }
@@ -71,7 +68,7 @@ a:focus-visible {
 .header__rec {
   position: absolute;
   top: 10px;
-  right: 19px;
+  right: 10px;
   display: var(--rec-display);
   line-height: 25px;
 }
@@ -94,14 +91,13 @@ a:focus-visible {
 }
 
 .header__theme-menu {
-  margin-inline-start: 285px;
+  margin-inline: auto 0;
   margin-block-start: 75px;
 }
 
 .header__theme-menu-list {
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 10px;
 }
 
@@ -147,14 +143,14 @@ a:focus-visible {
   margin-block-start: 65px;
   color: var(--hero-text-color);
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(6.25rem, 6.1575rem + 2.276vw, 7.25rem);
   line-height: 83%;
   text-align: left;
   text-shadow: 4px 4px 0px var(--hero-shadow-color);
 }
 
 .header__title {
-  margin-block: 54px 66px;
+  margin-block: 55px 66px;
 }
 
 .header__title-text {
@@ -166,7 +162,6 @@ a:focus-visible {
   grid-template-columns: 1fr;
   gap: 50px;
   margin-block-start: 40px;
-  padding-inline: 10px;
 }
 
 .section__title {
@@ -182,9 +177,18 @@ a:focus-visible {
   margin-block-start: 20px;
 }
 
+.section__cards-title {
+  font-weight: 700;
+  font-size: inherit;
+}
+
 .section__card-title {
   font-weight: 700;
   font-size: inherit;
+}
+
+.section__card-title_weight_medium {
+  font-weight: 400;
 }
 
 .section__card-subtitle {
@@ -235,15 +239,17 @@ a:focus-visible {
 }
 
 .footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-block-start: 40px;
-  padding-inline: 14px 13px;
-  padding-block: 286px 285px;
+  min-block-size: 667px;
 }
 
 .footer__hero {
   color: var(--hero-text-color);
   font-weight: 700;
-  font-size: 116px;
+  font-size: clamp(6.25rem, 6.1575rem + 2.276vw, 7.25rem);
   line-height: 83%;
   text-shadow: 2px 2px 0 var(--hero-shadow-color);
 }
@@ -254,10 +260,6 @@ a:focus-visible {
 }
 
 @media (width >= 768px) {
-  .page {
-    max-inline-size: 768px;
-  }
-
   .header {
     padding-inline: 0 20px;
   }
@@ -288,7 +290,7 @@ a:focus-visible {
 
   .header__hero {
     margin-block-start: 174.5px;
-    font-size: 120px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
   .header__title {
@@ -339,12 +341,11 @@ a:focus-visible {
 
   .footer {
     margin-block-start: 60px;
-    padding-inline: 204px;
-    padding-block: 463px;
+    min-block-size: 1024px;
   }
 
   .footer__hero {
-    font-size: 120px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }
 
@@ -367,8 +368,6 @@ a:focus-visible {
 
   .header__hero {
     margin-block-start: 273px;
-    font-size: 157px;
-    line-height: 83%;
   }
 
   .header__title {
@@ -412,12 +411,11 @@ a:focus-visible {
 
   .footer {
     margin-block-start: 60px;
-    padding-inline: 277px;
-    padding-block: 319px;
+    min-block-size: 768px;
   }
 
   .footer__hero {
-    font-size: 157px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     text-shadow: 2px 2px 0 var(--hero-shadow-footer-color);
   }
 }

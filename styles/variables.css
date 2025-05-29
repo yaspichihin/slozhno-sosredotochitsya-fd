@@ -1,7 +1,6 @@
 :root {
   --accent-color: #ff0070;
   --background-image: url(../images/cover-image-dark.png);
-  --background-color: #000028;
 
   --menu-text-color: #ff0070;
   --menu-text-color-hover: rgba(255, 0, 112, 0.4);
