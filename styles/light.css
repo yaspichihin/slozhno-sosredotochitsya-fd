@@ -1,6 +1,7 @@
 :root.theme-light {
   --accent-color: #ff8dcb;
   --background-image: url(../images/cover-image-light.png);
+  --background-color: #fff1f7;
 
   --menu-text-color: #353430;
   --menu-text-color-hover: rgba(53, 52, 48, 0.4);
@@ -23,6 +24,7 @@
   :root {
     --accent-color: #ff8dcb;
     --background-image: url(../images/cover-image-light.png);
+    --background-color: #fff1f7;
 
     --menu-text-color: #353430;
     --menu-text-color-hover: rgba(53, 52, 48, 0.4);
